@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Symbolic link between the nginx configuration
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+#Restarting nginx
+service nginx start
+
+#Terminating nginx process ID
+kill "$(pgrep 'nginx' | head -l)"
